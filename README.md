@@ -1,2 +1,2 @@
 # Programing
-Programing stuff.
+General Programing stuff.
