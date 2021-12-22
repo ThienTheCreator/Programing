@@ -38,3 +38,8 @@ public:
         return nums;
     }
 };
+
+/* Notes
+push_back is somewhat slower than direct assign.
+we can resize the original array and directly assign it to save space. 
+*/

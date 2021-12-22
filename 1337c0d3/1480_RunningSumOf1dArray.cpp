@@ -39,3 +39,7 @@ public:
         return vec;
     }
 };
+
+/* Notes
+To save space we can just assigned the values to the original array
+*/

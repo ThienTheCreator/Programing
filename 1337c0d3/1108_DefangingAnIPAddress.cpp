@@ -37,3 +37,7 @@ public:
         return temp;
     }
 };
+
+/* Note
+regex_replace can also be use to make the solution a one liner.
+*/
