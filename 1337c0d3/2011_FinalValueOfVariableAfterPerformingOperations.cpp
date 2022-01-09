@@ -65,3 +65,11 @@ public:
         return res;
     }
 };
+
+/* Note
+
+Since there are only four cases we can just coompare each case.
+Couldn't use a switch because it is a string.
+A solution I saw compare operations[i][1] if it is + or - .
+
+*/

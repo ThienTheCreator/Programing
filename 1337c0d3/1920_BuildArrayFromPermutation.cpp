@@ -37,3 +37,7 @@ public:
         return res;
     }
 };
+
+/* Note
+use direct assignment instead of push_back for time efficiency 
+*/

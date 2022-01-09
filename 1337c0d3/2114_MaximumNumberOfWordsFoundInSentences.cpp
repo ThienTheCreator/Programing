@@ -54,3 +54,11 @@ public:
         return highest;
     }
 };
+
+/* Note
+
+For this one we just count the number of spaces plus one to get the number of words.
+We check if the number of words is larger than what we have seen.
+Assign the variable to be the largest if it is.
+
+*/
