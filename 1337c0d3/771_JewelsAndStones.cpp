@@ -38,3 +38,11 @@ public:
         return ans;
     }
 };
+
+/* Note
+
+One of the most voted solution for C++ used a unorded set for the jewels 
+and if a char from stones matches the one in the set then increament the
+answer.
+
+*/

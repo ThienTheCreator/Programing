@@ -44,3 +44,10 @@ public:
         return ans;
     }
 };
+
+/* Note
+
+The most voted solution use an unordered_map and added the number of times the
+number is seen then incremented the number.
+
+*/

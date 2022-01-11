@@ -42,4 +42,6 @@ public:
 
 /* Note
 
+The minimum is just the largest number and the number over 10 would be more than the minimum.
+
 */

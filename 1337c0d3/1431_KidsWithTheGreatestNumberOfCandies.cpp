@@ -60,3 +60,10 @@ public:
         return vec;
     }
 };
+
+/* Note
+
+One of the solution had an minor optimization of subtracting extra candies from
+the max number in the array so that we don't have to add in the second loop.
+
+*/
