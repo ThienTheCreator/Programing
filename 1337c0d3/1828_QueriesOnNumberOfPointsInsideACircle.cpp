@@ -60,3 +60,11 @@ public:
         return ans;
     }
 };
+
+/* Note
+
+The most voted solution used sorting to sort the point first.
+Instead of using sqrt they use multiplicationg instead.
+Multiplication is faster to do than division or sqrt.
+
+*/

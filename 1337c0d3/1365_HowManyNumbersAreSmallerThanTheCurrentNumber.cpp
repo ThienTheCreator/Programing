@@ -51,3 +51,9 @@ public:
         return ans;
     }
 };
+
+/* Note
+
+The most voted solution 
+
+*/

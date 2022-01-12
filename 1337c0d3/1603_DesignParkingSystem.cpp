@@ -56,3 +56,11 @@ public:
  * ParkingSystem* obj = new ParkingSystem(big, medium, small);
  * bool param_1 = obj->addCar(carType);
  */
+
+/* Note
+
+One of the most voted solution used a vector to store the values.
+For the add car function they use: 
+    return count[carType - 1]-- > 0;
+
+*/
