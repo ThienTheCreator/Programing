@@ -42,3 +42,9 @@ public:
         return ans;
     }
 };
+
+/* Note
+
+This one is straightforward. We just have to do the XOR and added to our array.
+
+*/

@@ -43,3 +43,10 @@ public:
         return tempProduct - tempSum;
     }
 };
+
+/* Note
+
+Solution is similar to the most vote solution, but most voted solution did not
+have the temp variable. They directly did the n % 10 either add or multiply. 
+
+*/

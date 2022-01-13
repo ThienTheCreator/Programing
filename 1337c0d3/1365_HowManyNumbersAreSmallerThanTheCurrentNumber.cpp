@@ -54,6 +54,11 @@ public:
 
 /* Note
 
-The most voted solution 
+The most voted solution created two arrays. 
+The first array counted the number of frequency like array1[nums[i]]++;
+After all the frequency are counted they did dynamic programing to find the
+smaller number like this array1[nums[i]] += array1[nums[i-1]];
+The second array is the answer we loop through the res[i] = array1[nums[i]-1]
+if nums[i] == 0 then res[i] = 0
 
 */

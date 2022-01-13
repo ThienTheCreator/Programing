@@ -40,3 +40,10 @@ public:
         return str;
     }
 };
+
+/* Note
+
+The most voted solution used swaping. They would just swap the string and the
+indices until they got the right order of 0,1,2,...,n-1.
+
+*/
