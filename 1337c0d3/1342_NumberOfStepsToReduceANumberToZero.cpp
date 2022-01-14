@@ -55,3 +55,11 @@ public:
         return ans-1;
     }
 };
+
+/* Note
+
+If it is zero we return zero else we count the bits if it is 1 we add 2
+if it is 0 we add 1. Then we shift the number 1 bit to the right.
+We subtract 1 away from the final result because there is 1 less step.
+
+*/

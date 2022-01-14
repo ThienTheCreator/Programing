@@ -51,3 +51,12 @@ public:
         return ans;
     }
 };
+
+/* Note
+
+The most voted C++ solution used dynamic programing to solve the question.
+What they did was count the number of boxes and balls and loop through it
+adding the number of balls they have. Then they do the same thing but from
+right to left.
+
+*/

@@ -35,3 +35,10 @@ public:
         return ans;
     }
 };
+
+/* Note
+
+One of the solutions I saw use the insert() function. 
+It loop through the array and incremented by 2.
+
+*/
