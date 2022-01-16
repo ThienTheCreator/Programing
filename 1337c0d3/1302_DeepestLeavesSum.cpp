@@ -59,3 +59,11 @@ public:
         return res;
     }
 };
+
+/* Note
+
+Fot this problem, a queue is use to loop through the levels. After each level
+we reset the answer to 0. We accumulate the the values at each level. 
+To look at the elements of the queue we front().
+
+*/
