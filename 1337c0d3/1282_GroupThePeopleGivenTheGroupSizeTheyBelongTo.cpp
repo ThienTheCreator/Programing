@@ -62,6 +62,8 @@ public:
 
 /* Note
 
-Just implemented a brute force solution.
+The most voted solution used a hashmap or array to keep track of number.
+They use two vector<vector<int>> one of them is use to keep the answer
+and the other one is use as a temporary to group the numbers.
 
 */
