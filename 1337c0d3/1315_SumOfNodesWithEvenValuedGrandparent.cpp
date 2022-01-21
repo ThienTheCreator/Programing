@@ -75,6 +75,6 @@ public:
 
 /* Note
 
-Implemented a recursive approach.
+Implemented a DFS recursive approach. 
 
 */
