@@ -94,5 +94,6 @@ public:
 /* Note
 
 I am a bit rusty on switch so I implemented a switch. I forgot to break after each case.
+I tested individual case to see how many step it would take. 
 
 */
