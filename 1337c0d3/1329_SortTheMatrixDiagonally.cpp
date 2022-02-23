@@ -26,25 +26,40 @@ n == mat[i].length
 class Solution {
 public:
     vector<vector<int>> diagonalSort(vector<vector<int>>& mat) {
-        vector<int> sortedVec;
         vector<vector <int>> vec(mat.size(), vector<int>(mat[0].size()));
-        for(auto r: mat){
-            for(auto c: r){
-                sortedVec.push_back(c);
+        int r = vec.size();
+        int c = vec[0].size();
+        int x = 0;
+        int y = 0;
+        vector<int> tempVec;
+        for(int i = 0; i < r + c - 1; i++){
+            if(c - 1 - i >= 0){
+                x = 0;
+                y = c - 1 - i;
+            }else{
+                x = i - r;
+                y = 0;
             }
-        }
-        sort(sortedVec.begin(), sortedVec.end());
-        int index = 0;
-        for(int i = 0; i < mat.size(); i++){
-            for(int j = i; j < mat[i].size(); j++){
-                int temp = i;
-                vec[temp][j] = sortedVec[index];
-                index++;
+            
+            int tempX = x;
+            int tempY = y;
+            
+            tempVec.clear();
+            while(x < r && y < c){
+                // tempVec.push_back(mat[x][y]);
+                x++;
+                y++;
+                cout << x << "," << y << " ";
             }
-            for(int k = i+1; k < mat.size(); k++){
-                int temp = i;
-                vec[k][temp] = sortedVec[index];
-                index++;
+            cout << endl;
+            sort(tempVec.begin(),tempVec.end());
+            
+            x = tempX;
+            y = tempY;
+            for(int tempInt: tempVec){
+                vec[x][y] = tempInt;
+                x++;
+                y++;
             }
         }
         return vec;
@@ -53,6 +68,6 @@ public:
 
 /* Note
 
-An attemp at the solution. have to read over question again.
+Second attempt at the solution. 
 
 */
