@@ -37,7 +37,7 @@ public:
                 x = 0;
                 y = c - 1 - i;
             }else{
-                x = i - r;
+                x = i + 1 - c;
                 y = 0;
             }
             
@@ -46,12 +46,10 @@ public:
             
             tempVec.clear();
             while(x < r && y < c){
-                // tempVec.push_back(mat[x][y]);
+                tempVec.push_back(mat[x][y]);
                 x++;
                 y++;
-                cout << x << "," << y << " ";
             }
-            cout << endl;
             sort(tempVec.begin(),tempVec.end());
             
             x = tempX;
@@ -68,6 +66,8 @@ public:
 
 /* Note
 
-Second attempt at the solution. 
+The most voted solution map an int with a priotiy queue. They use i - j diagonal rows to each 
+other. Then they a nested for loop like normal to get lowest element from the priority queue with 
+the associated row.
 
 */
