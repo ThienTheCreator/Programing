@@ -35,13 +35,39 @@ Constraints:
 class Solution {
 public:
     int maxProductDifference(vector<int>& nums) {
-        sort(nums.begin(),nums.end());
-        return (nums[nums.size()-1]*nums[nums.size()-2])-(nums[0]*nums[1]);
+        int a[4];
+        priority_queue<int> que;
+        for(int i = 0; i < 4; i++){
+            que.push(nums[i]);
+        }
+        for(int i = 3; i >= 0; i--){
+            a[i] = que.top();
+            que.pop();
+        }
+        for(int i = 4; i < nums.size(); i++){
+            if(nums[i] <= a[0]){
+                a[1] = a[0];
+                a[0] = nums[i];
+            }else if(nums[i] < a[1]){
+                a[1] = nums[i];
+            }else if(nums[i] >= a[3]){
+                a[2] = a[3];
+                a[3] = nums[i];
+            }else if(nums[i] > a[2]){
+                a[2] = nums[i];
+            }
+        }
+        return (a[3] * a[2]) - (a[1] * a[0]);
     }
 };
 
 /* Note
 
-brute force
+I use a priority_queue to get the first four elements of the original vector in sorted order.
+Get the two largest and two smallest numbers from the vector. The first two element of the array a
+stores the two smallest value and the last two elements of a store the largest two value. If value
+is smaller than the the smallest then move the value to second smallest and replace smallest with
+value. If it is bigger then the smallest but smaller than then second smallest then just replace
+the second smallest value. The bigger values in the array work similar to this.
 
 */
