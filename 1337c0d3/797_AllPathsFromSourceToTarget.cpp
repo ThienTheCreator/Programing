@@ -39,23 +39,23 @@ public:
             res[i].push_back(graph[0][i]);
         }
         
-        for(int i = 1; i < graph.size(); i++){
+        bool tf = true;
+        
+        while(tf){
+            tf = false;
             vector<int> temp;
-            for(int j = 0; j < res.size(); j++){
-                if(res[j].back() == i){
-                    if(graph[i].size() == 0){
-                        tempVec.push_back(res[j]);
-                    }else{
-                        for(int k = 0; k < graph[i].size(); k++){
-                            temp = res[j];
-                            temp.push_back(graph[i][k]);
-                            tempVec.push_back(temp);
-                        }
-                    }
+            for(int i = 0; i < res.size(); i++){
+                if(res[i].back() == graph.size()-1){
+                    tempVec.push_back(res[i]);
                 }else{
-                    tempVec.push_back(res[j]);
+                    int j = res[i].back();
+                    for(int k = 0; k < graph[j].size(); k++){
+                        temp = res[i];
+                        temp.push_back(graph[j][k]);
+                        tempVec.push_back(temp);
+                    }
+                    tf = true;
                 }
-                
             }
             res = tempVec;
             tempVec.clear();
@@ -64,4 +64,11 @@ public:
         return res;
     }
 };
+
+/* Note
+
+I remember the solution to this problem is backtracking. I tried to implement a iterative solution
+to solve the problem instead of recurive way. Iterative took some time to figure out the logic.
+
+*/
 
