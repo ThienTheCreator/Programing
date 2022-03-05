@@ -46,6 +46,16 @@ The beginning and end of the linked list have Node.val == 0.
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
 class Solution {
 public:
     ListNode* mergeNodes(ListNode* head) {
@@ -55,12 +65,13 @@ public:
             ListNode* end = start;
             int sum = 0;
             while(end->val != 0){
-                cout << end->val << endl;
                 sum += end->val;
                 end = end->next;
             }
+            
             start->val = sum;
             start->next = end->next;
+            start = start->next;
         }
         return head;
     }
@@ -68,6 +79,8 @@ public:
 
 /* Note
 
-Trying to follow the most voted solution answer.
+This solution is the most voted answer. It uses two pointer method to keep track of wher you are in
+the link list. I tried to use add the value to the next node and remove the node, but it was hard
+to implement.
 
 */
