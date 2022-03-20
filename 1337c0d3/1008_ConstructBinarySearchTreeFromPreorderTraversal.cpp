@@ -42,26 +42,22 @@ All the values of preorder are unique.
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+
 class Solution {
 public:
     TreeNode* bstFromPreorder(vector<int>& preorder) {
-        int start = 1, end = preorder.size()-1;
-        if(preorder.size() == 0){
+        int i = 0;
+        return createBst(preorder, i, INT_MAX);
+    }
+    
+    TreeNode* createBst(vector<int>& arr, int &i, int bound){
+        if(i == arr.size() || arr[i] > bound){
             return NULL;
         }
         
-        int i;
-        for(i = 0; i < preorder.size(); i++){
-            if(preorder[0] < preorder[i]){
-                break;
-            }
-        }
-        
-        vector<int> leftVec(preorder.begin()+1, preorder.begin() + i - 2);
-        vector<int> rightVec(preorder.begin() + i, preorder.end());
-        TreeNode* left = bstFromPreorder(leftVec);
-        TreeNode* right = bstFromPreorder(rightVec);
-        TreeNode* root = new TreeNode(preorder[0], left, right);
+        TreeNode *root = new TreeNode(arr[i++]);
+        root->left = createBst(arr, i, root->val); 
+        root->right = createBst(arr, i, bound);
         
         return root;
     }
@@ -69,6 +65,11 @@ public:
 
 /* Note
 
-Attemp at solution.
+I this solution is from "lee215". 
+
+In this solution one thing to keep note is that he did not split up the array but use a reference
+to an interger to keep track of the array. He also created a helper function, but he also had a
+solution using a global int i. The bound variable is the most important part of the recursion 
+different from my thinking. I originally wanted to split the array into two for left and right. 
 
 */
