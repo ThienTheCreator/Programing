@@ -32,8 +32,6 @@ Return the result table ordered by employee_id in ascending order.
 
 The query result format is in the following example.
 
- 
-
 Example 1:
 
 Input: 
