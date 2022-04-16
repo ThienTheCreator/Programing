@@ -74,7 +74,7 @@ public:
 
 /* Note
 
-Trying to implement a iterative bfs.
+Trying to implement a iterative dfs.
 I look at the solution and it looks like we have to do DFS. 
 
 */
