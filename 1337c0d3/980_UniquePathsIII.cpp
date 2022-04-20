@@ -47,34 +47,55 @@ There is exactly one starting cell and one ending cell.
 
 class Solution {
 public:
+    int pathSize = 0;
     int uniquePathsIII(vector<vector<int>>& grid) {
-        vector<vector<bool>> visited(grid.size(), vector<bool>(grid[0].size()));
-        
-        pair<int, int> start;
-        pair<int, int> end;
+        int res = 0;
+        int xStart, yStart, xEnd, yEnd;
         
         for(int i = 0; i < grid.size(); i++){
             for(int j = 0; j < grid[i].size(); j++){
                 if(grid[i][j] == 1){
-                    start = make_pair(i,j);
+                    xStart = i;
+                    yStart = j;
+                }else if(grid[i][j] == 2){
+                    xEnd = i;
+                    yEnd = j;
+                }else if(grid[i][j] == 0){
+                    pathSize++;
                 }
-                if(grid[i][j] == 2){
-                    end = make_pair(i,j);
-                }           
             }
         }
         
-        stack<pair<int, int>> s;
-        stack.push<start>
-        while(!s.empty()){
-            
+        pathSize++;
+        
+        return dfs(xStart, yStart, 0, grid);
+    }
+    
+    int dfs(int x, int y, int count, vector<vector<int>> grid){
+        if(x < 0 || x > grid.size() - 1 || y < 0 || y > grid[x].size() - 1 || grid[x][y] == -1 || count > pathSize){
+            return 0;
         }
+        
+        if(count == pathSize && grid[x][y] == 2){
+            return 1;
+        }
+        
+        int temp = 0;
+        grid[x][y] = -1;
+        
+        temp += dfs(x + 1, y, count + 1, grid);
+        temp += dfs(x, y + 1, count + 1, grid);
+        temp += dfs(x - 1, y, count + 1, grid);
+        temp += dfs(x, y - 1, count + 1, grid);
+        
+        return temp;
     }
 };
 
 /* Note
 
-Trying to implement a iterative dfs.
-I look at the solution and it looks like we have to do DFS. 
+This one took me a while to to solve. I try to do it iterative at first, but it seems more
+complicated and inefficient than recursive method. This solution ran pretty slow. Might look at
+this later.
 
 */
