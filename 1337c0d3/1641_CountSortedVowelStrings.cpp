@@ -46,6 +46,9 @@ public:
 
 /* Note
 
+Solution from lee215 from the link below:
+https://leetcode.com/problems/count-sorted-vowel-strings/discuss/918498/JavaC%2B%2BPython-DP-O(1)-Time-and-Space
+
 Have to look over this solution again. I knew that the solution had to do with dynamic programing,
 and the optimal solution had to do with math dealing with permutations or combinations. Did not
 the logic or how to implement it.
