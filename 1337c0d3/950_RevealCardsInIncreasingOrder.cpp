@@ -44,6 +44,25 @@ All the values of deck are unique.
 
 */
 
+class Solution {
+public:
+    vector<int> deckRevealedIncreasing(vector<int>& deck) {
+        sort(deck.begin(),deck.end());
+        
+        deque<int> d;
+        d.push_back(deck[deck.size()-1]);
+        
+        for(int i = deck.size()-2; i >= 0; i--){
+            d.push_front(d.back());
+            d.pop_back();
+            d.push_front(deck[i]);
+        }
+        
+        vector<int> res(d.begin(), d.end());
+        return res;
+    }
+};
+
 /* Note
 
 Could not solve this problem need to look over it again.
@@ -99,5 +118,9 @@ vector<int> deckRevealedIncreasing(vector<int>& deck) {
   }
   return res;
 }
+
+The solution works by doing the instructions backwards.
+Sort the array.
+Start with the highest number and implement the algorithm backwards 2->1->3. 
 
 */
