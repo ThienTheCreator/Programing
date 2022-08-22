@@ -96,9 +96,14 @@ public:
 
 /* Note
 
+Time: O(n^2)
+Space: O(n)
+
 Wasn't able to solve it within 20 minutes. Looked over neetcode solution to see because my solution
 had some errors. The solution makes another class so I feel like the code is cleaner. Passing the
 word by reference was faster than passing it by value. I thought I did not need to use the boolean
 is word, but the problem checks to see if it is a value word not just if it is a prefix of a word.
+
+Solution implements a trie and dfs.
 
 */
