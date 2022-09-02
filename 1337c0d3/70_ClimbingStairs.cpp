@@ -49,6 +49,8 @@ Time: O(n)
 Space: O(1)
 
 It was easy to solve when I figure out the patter was fibonacci sequence. Still trying to figure
-out how to find the pattern. 
+out how to find the pattern.
+
+
 
 */
