@@ -57,8 +57,8 @@ public:
 Time: O(amount * n) n is size of coins
 Space: O(amount)
 
-Could not solve it. The solution require creating a vector to the size of the amount + 1. For every
-element in the vector you check whether it is the smallest number of coins using the index to keep
-track.
+Could not solve it. Did not think about creating a vector the size of the amount + 1. The solution
+require creating a vector to the size of the amount + 1. For every element in the vector you check
+whether it is the smallest number of coins using the index to keep track.
 
 */
