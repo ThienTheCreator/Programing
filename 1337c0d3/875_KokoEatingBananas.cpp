@@ -59,8 +59,8 @@ public:
 
 /* Note
 
-Time: O()
-Space: O()
+Time: O(m log n)
+Space: O(1)
 
 Couldn't solve this question. I tried to add all the piles together but it did not work because I
 think it was too big to store. 
